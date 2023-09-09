@@ -1,35 +1,19 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg)
 
-# What is Tiny Tapeout?
+# Introduction
+RISC-V experiments using Tiny Tapeout 4's verilog demo https://github.com/TinyTapeout/tt04-verilog-demo for future https://tinytapeout.com submission.
 
-TinyTapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip!
+# How to install
+* use WSL or Ubuntu VM/machine
+* install docker >=24.0.5
+* clone repo and go to ./, then run `make install`
 
-Go to https://tinytapeout.com for instructions!
+# How to use tools
+* open WSL terminal and go to ./, then run `make` to start verilog_toolchain container
+* open new WSL terminal and go to ./, then run `make connection` to make tty connection to verilog_toolchain container
+    * in this tty session type `make` and wait until builds and tests will finish
+    * observe any errors and warnings
 
-## How to change the Wokwi project
-
-Edit the [info.yaml](info.yaml) and change the wokwi_id to match your project.
-
-## How to enable the GitHub actions to build the ASIC files
-
-Please see the instructions for:
-
-- [Enabling GitHub Actions](https://tinytapeout.com/faq/#when-i-commit-my-change-the-gds-action-isnt-running)
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
-
-## How does it work?
-
-When you edit the info.yaml to choose a different ID, the [GitHub Action](.github/workflows/gds.yaml) will fetch the digital netlist of your design from Wokwi.
-
-After that, the action uses the open source ASIC tool called [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/) to build the files needed to fabricate an ASIC.
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://discord.gg/rPK2nSjxy8)
-
-## What next?
-
-- Share your GDS on Twitter, tag it [#tinytapeout](https://twitter.com/hashtag/tinytapeout?src=hashtag_click) and [link me](https://twitter.com/matthewvenn)!
+# How to launch gtkwave
+* Intall Xmin server with https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx following "Run Graphical Programs" chapter
+* open another WSL terminal and go to ./, then type `make wave`
