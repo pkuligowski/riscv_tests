@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  python:
+    container_name: python
+    image: python:3.11.5-bookworm
+    tty: true
+    deploy:
+        restart_policy:
+            condition: on-failure
+    volumes:
+      - /mnt/f/private/git/tt04-verilog-project:/mnt/tt04-verilog-project
