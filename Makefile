@@ -7,5 +7,5 @@ clean:
 .PHONY: clean
 
 connection:
-	sudo docker exec -it python bash
+	sudo docker exec -it verilog_toolchain bash
 .PHONY: connection
